@@ -1,14 +1,11 @@
 using UnityEngine;
 
-using UnityEngine;
-
 public class Health : MonoBehaviour
 {
 	public GameObject explosionPrefab;
-
 	public int defaultHealthPoint = 1;
 	private int healthPoint;
-
+	public System.Action onDead;
 	private void Start()
 	{
 		healthPoint = defaultHealthPoint;
@@ -30,5 +27,6 @@ public class Health : MonoBehaviour
 			Destroy(explosion, 1f);
 		}
 		Destroy(gameObject);
+		onDead?.Invoke();
 	}
 }

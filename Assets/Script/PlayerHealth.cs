@@ -8,6 +8,5 @@ public class PlayerHealth : Health
 	{
 		base.Die();
 		Debug.Log("Player died");
-	
 	}
 }
